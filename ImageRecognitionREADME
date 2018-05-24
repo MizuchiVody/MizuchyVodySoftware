@@ -1,0 +1,16 @@
+# Image recognition system
+
+This program identifies different tail sections
+
+### Prerequisites
+
+This program requires the following libraries to be installed: 
+  opencv-python
+  numpy
+  imutils
+
+## Authors
+
+* **Farouk Lemyesser** 
+* **Mohamed Aghzal** 
+* **Nizar Sabbar**  
