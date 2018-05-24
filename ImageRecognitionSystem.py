@@ -28,16 +28,12 @@ def ProcessImage(img):
     hsvyellowthresh = inRange(HSV, lower_yellow, upper_yellow)
     hsvredthresh = inRange(HSV, lower_red, upper_red)
 
-    hsvredthresh = cv2.bitwise_and(hsvredthresh, hsvredthresh, mask=hsvredthresh)
-    hsvbluethresh = cv2.bitwise_and(hsvbluethresh, hsvbluethresh, mask=hsvbluethresh)
-    hsvyellowthresh = cv2.bitwise_and(hsvyellowthresh, hsvyellowthresh, mask=hsvyellowthresh)
-
     # Initializing a list containing the three threshed
     ThreshColors = [hsvbluethresh, hsvredthresh, hsvyellowthresh]
 
     color = {0: "Blue", 1: "Red", 2: "Yellow"}
-    tailTri = {0: "G7C", 1: "UH8", 2: "L6R"}
-    tailRect = {0: "A2X", 1: "S1P", 3: "JW3"}
+    tailTri = {0: "C", 1: "A", 2: "B"}
+    tailRect = {0: "F", 1: "D", 3: "E"}
     maxArea = 0
     shape = "Unknown"
     for i in range(0, 3):
@@ -68,11 +64,11 @@ def ProcessImage(img):
                     tail = tailTri[i]
                 elif shape == "Rectangle":
                     if i == 0:
-                        tail = "A2X"
+                        tail = "F"
                     elif i == 1:
-                        tail = "S1P"
+                        tail = "D"
                     else:
-                        tail = "JW3"
+                        tail = "E"
 
         if shape != "Unknown" and tail != "Unknown":
             #  Computing the moment of the contour and the center to be able to draw the contour and write at its center
